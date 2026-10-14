@@ -7,6 +7,8 @@
 
 [Condicionais](#condicionais)
 
+[Array](#array)
+
 ---
 
 ### Declarar uma variavel
@@ -115,3 +117,103 @@ entre outras coisas, depende muito da sua lógica de programação e como irá u
 ---
 
 ### Condicionais
+
+As estruturas condicionais são comumente utilizadas para realizar verificações e validações em um sistema. 
+Elas permitem executar diferentes blocos de código dependendo de uma condição, 
+podendo ser utilizadas tanto em situações simples quanto complexas.
+
+São muito importantes na lógica de programação e estão presentes na maioria das aplicações, pois permitem que o sistema tome decisões com base nas informações recebidas.
+
+Utiliza-se `if`, `else if` e `else` 
+para criar estruturas condicionais e executar diferentes blocos de código dependendo das condições.
+
+Além disso, podemos utilizar operadores lógicos para complementar as condições:
+
+`&&` - Operador lógico "E": retorna verdadeiro se ambas as condições forem verdadeiras. 
+
+`||` - Operador lógico "OU": retorna verdadeiro se pelo menos uma das condições for verdadeira.
+
+`!` - Operador lógico "NOT": inverte o valor lógico. Se a condição for verdadeira, passa a ser falsa, e vice-versa.
+
+Pode parecer um pouco confuso no início, porém, basta ler e entender as condições para compreender a lógica utilizada.
+Ex:
+
+```java
+int idade = 18;
+
+if(idade < 12){
+    System.out.println("Você é criança");
+}else if (idade < 18 && idade >= 12){
+    System.out.println("Você é adolescente");
+}else{
+    System.out.println("Você é adulto");
+}
+```
+
+Esse é um exemplo simples de estrutura condicional. Ao ler o código, 
+é possível entender como as condições são verificadas e como o programa decide qual mensagem exibir.
+
+Leitura do código: tenho uma variável chamada idade, que recebe o valor 18. Se a idade for menor que 12, 
+o sistema exibirá que a pessoa é uma criança. Caso contrário, se a idade for menor que 18 e maior ou igual a 12, 
+o sistema exibirá que a pessoa é um adolescente. Se nenhuma dessas condições for verdadeira, 
+o sistema exibirá que a pessoa é um adulto.
+
+---
+
+### Switch-case
+
+O `switch-case` é uma estrutura condicional utilizada para verificar o valor de uma variável ou expressão e executar diferentes blocos de código dependendo do resultado.
+
+Ele pode ser utilizado como uma alternativa ao `if` e `else if` quando precisamos comparar um mesmo valor com várias possibilidades diferentes.
+
+Utiliza-se `switch` para iniciar a estrutura condicional, `case` para definir os valores que serão verificados e `break` para encerrar a execução do bloco correspondente.
+
+Além disso, existe o `default`, que é executado quando nenhum dos casos definidos corresponde ao valor analisado.
+
+Ex:
+
+```java
+int dia = 3;
+
+switch (dia) {
+    case 1:
+        System.out.println("Domingo");
+        break;
+    case 2:
+        System.out.println("Segunda-feira");
+        break;
+    case 3:
+        System.out.println("Terça-feira");
+        break;
+    case 4:
+        System.out.println("Quarta-feira");
+        break;
+    case 5:
+        System.out.println("Quinta-feira");
+        break;
+    case 6:
+        System.out.println("Sexta-feira");
+        break;
+    case 7:
+        System.out.println("Sábado");
+        break;
+    default:
+        System.out.println("Dia inválido");
+}
+```
+
+Esse é um exemplo simples de `switch-case`. Ao ler o código, 
+você verá que é intuitivo identificar as diferentes possibilidades e o que será executado em cada uma delas.
+
+**Leitura:** tenho uma variável chamada `dia`, que recebe o valor `3`. 
+O `switch` verifica esse valor e procura um `case` correspondente. Como existe um `case 3`, 
+o sistema exibe a mensagem "Terça-feira". Em seguida, o `break` encerra a execução do `switch`, 
+impedindo que os próximos casos sejam executados.
+
+Caso o valor de `dia` não corresponda a nenhum dos casos definidos, o bloco `default` será executado, 
+exibindo a mensagem "Dia inválido".
+
+---
+
+### Array
+

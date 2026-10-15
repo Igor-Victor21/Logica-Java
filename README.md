@@ -217,3 +217,70 @@ exibindo a mensagem "Dia inválido".
 
 ### Array
 
+Um array basicamente é um lugar onde você pode armazenar um conjunto de valores do mesmo tipo em um único lugar.
+
+Com isso, você pode utilizar um array de diferentes formas, 
+desde armazenar notas de alunos até guardar dados de usuários de uma plataforma.
+
+Como declarar um array:
+
+### Array com tamanho definido, mas sem valores definidos manualmente
+
+```java
+double[] notas = new double[10];
+```
+
+---
+
+### Array inicializado com valores
+
+```java
+double[] notas = {7.0, 8.5, 2.5};
+```
+
+Ok, mas qual a diferença entre um e outro?
+
+Ambos os arrays precisam ter um tamanho definido para funcionar. A diferença é que, no primeiro exemplo, 
+você define o tamanho do array, mas não informa os valores manualmente. Nesse caso, como o tipo é `double`, 
+todas as posições começam com o valor `0.0`.
+
+Já no segundo exemplo, você cria o array e define os valores ao mesmo tempo.
+
+Geralmente, utilizo o array inicializado em exercícios de lógica, 
+porque é mais rápido de escrever quando já sei quais valores quero utilizar.
+
+Já o array com tamanho definido, mas sem valores informados manualmente, 
+pode ser útil quando sei quantos espaços preciso criar, mas ainda vou preencher os valores depois.
+
+**Importante:** o tamanho de um array é fixo. Isso significa que, 
+depois de criado, você não consegue aumentar ou diminuir sua quantidade de posições. 
+Por isso, em sistemas nos quais a quantidade de cadastros pode variar, 
+geralmente é mais interessante utilizar um `ArrayList`, que permite adicionar e remover elementos com mais facilidade.
+
+---
+
+### Índice de um Array
+
+Os dados são armazenados em posições dentro do array, e cada posição possui um índice. O índice começa no `0` e vai até uma posição a menos do que o tamanho total do array.
+
+Exemplo: caso você tenha um array com 10 posições, os índices vão de `0` até `9`, totalizando 10 posições. Isso é padrão para os arrays em Java.
+
+Então, caso queira armazenar um valor ou exibir um dado específico, lembre-se de que o índice começa no `0` e vai até o tamanho do array menos um. Isso também vale para os arrays que já são inicializados com valores.
+
+```java
+// Criando um array de notas
+double[] notas = new double[3];
+
+// Definindo um valor no índice 0 do array
+notas[0] = 7.0;
+
+// Exibindo o valor armazenado no índice 0
+System.out.println(notas[0]);
+```
+
+Nesse exemplo, criamos um array com 3 posições. Depois, armazenamos o valor `7.0` no índice `0` e exibimos esse valor no console.
+
+Então, é importante entender como funcionam os índices de um array para conseguir armazenar, alterar e exibir valores corretamente.
+
+### ArrayList
+  

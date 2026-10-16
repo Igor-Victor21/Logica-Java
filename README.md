@@ -9,6 +9,10 @@
 
 [Array](#array)
 
+[ArrayList](#arraylist)
+
+[Looping-de-repetição](#looping-de-repetição)
+
 ---
 
 ### Declarar uma variavel
@@ -283,4 +287,62 @@ Nesse exemplo, criamos um array com 3 posições. Depois, armazenamos o valor `7
 Então, é importante entender como funcionam os índices de um array para conseguir armazenar, alterar e exibir valores corretamente.
 
 ### ArrayList
+
+Um `ArrayList` é uma classe do Java que funciona de forma parecida com um array, 
+pois permite armazenar um conjunto de informações.
+
+Porém, existe uma diferença importante: você pode adicionar e remover elementos de forma dinâmica, 
+sem precisar definir uma quantidade fixa de posições no momento da criação.
+
+Então, caso você tenha um sistema em que não sabe quantos usuários ou quantas informações precisará armazenar, 
+o `ArrayList` pode ser uma boa opção.
+
+Para utilizar essa classe, primeiro você precisa importá-la da biblioteca `java.util`.
+
+```java
+import java.util.ArrayList;
+```
+
+Como utilizar:
+
+```java
+// Importando a classe ArrayList
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando a lista
+        ArrayList<String> nomes = new ArrayList<>();
+
+        // Adicionando nomes à lista
+        nomes.add("Igor Victor da Silva");
+        nomes.add("Felipe");
+        nomes.add("Vinicius");
+
+        // Removendo um dos nomes
+        nomes.remove(2);
+
+        // Exibindo o nome no índice 0
+        System.out.println(nomes.get(0));
+    }
+}
+```
+
+Nesse exemplo, criamos uma lista de nomes utilizando `ArrayList<String>`. 
+O `String` indica que essa lista vai armazenar textos.
+
+Para adicionar elementos, utilizamos o método `add()`. 
+Já para remover um elemento pelo índice, utilizamos o método `remove()`.
+
+Por último, para acessar um elemento específico da lista, 
+utilizamos o método `get()`, informando o índice que queremos acessar.
+
+**Importante:** assim como nos arrays, os índices do `ArrayList` começam no `0`. 
+Além disso, ele não é literalmente ilimitado, pois existem limites de memória e capacidade, 
+mas seu tamanho pode aumentar ou diminuir conforme você adiciona ou remove elementos.
+
+---
+
+### Looping de repetição
+
   

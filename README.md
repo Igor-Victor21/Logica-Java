@@ -345,4 +345,179 @@ mas seu tamanho pode aumentar ou diminuir conforme você adiciona ou remove elem
 
 ### Looping de repetição
 
-  
+O looping de repetição geralmente é utilizado para executar processos repetitivos. Em Java, 
+podemos utilizar `while`, `for`, `for-each` e `do-while` para realizar esse tipo de processo.
+
+Eles são muito utilizados em sistemas para percorrer listas e arrays, 
+exibir informações ou manter um processo funcionando até que o usuário decida sair.
+
+Seu uso é bem vasto e depende da sua lógica e de como você pretende utilizar um looping de repetição.
+
+### Looping while
+
+O looping de repetição `while` continua executando um bloco de código enquanto a condição for verdadeira. 
+Caso a condição seja `false`, o bloco de código se encerra e o sistema continua executando as próximas instruções.
+
+Também é possível encerrar um looping utilizando o comando `break`, que interrompe a repetição imediatamente.
+
+Como fazer um looping `while`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Declarando uma variável para o contador
+        int contador = 0;
+
+        // Fazendo um looping while para contar de 0 até 10
+        while (contador <= 10) {
+            System.out.println(contador);
+            contador++;
+        }
+    }
+}
+```
+
+É um sisteminha bem simples, apenas para contar de 0 até 10. Porém, 
+você pode colocar uma condição específica no `while` e, enquanto essa condição for verdadeira, ele continuará executando.
+
+Você pode fazer cálculos, verificar informações, organizar listas, exibir arrays e muitas outras coisas.
+
+---
+
+### Looping de repetição for
+
+O looping de repetição `for` funciona de uma forma um pouco diferente. Nele, você pode definir uma variável de controle, 
+uma condição para continuar repetindo e uma forma de atualizar essa variável a cada repetição.
+
+Por isso, ele costuma ser mais prático quando você já sabe quantas vezes deseja executar um bloco de código ou quando precisa percorrer um conjunto de informações.
+
+Por exemplo, você pode utilizar o `for` para percorrer um array com 100 informações ou executar uma tarefa 10 vezes.
+
+Lógico que também dá para fazer isso com o `while`, mas, em algumas situações,
+o `for` deixa o código mais organizado e fácil de entender.
+
+Como fazer um looping `for`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Fazendo um contador de 0 até 10 com for
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
+```
+
+É um exemplo bem simples de entender. Vamos separar cada parte do `for`:
+
+```java
+for (int i = 0; i <= 10; i++)
+```
+
+- `int i = 0;` - declaramos uma variável chamada `i`, que começa com o valor `0`.
+- `i <= 10;` - essa é a condição. Enquanto `i` for menor ou igual a `10`, o looping continuará executando.
+- `i++` - incrementa o valor de `i` em 1 a cada repetição. É equivalente a fazer `i = i + 1`.
+
+Dessa forma, o código exibe os números de 0 até 10. Quando `i` chega a `11`, 
+a condição se torna falsa e o looping termina.
+
+---
+
+### for-each
+
+O `for-each` é utilizado para percorrer os elementos de um array ou de uma coleção, 
+como um `ArrayList`, de forma mais simples, sem precisar controlar manualmente os índices.
+
+Como fazer um looping `for-each`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        String[] nomes = {"Igor", "Fernando", "Luiz"};
+
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+    }
+}
+```
+
+Para entender mais facilmente, leia a linha do `for-each` traduzindo o símbolo `:` como "em" ou "dentro de".
+
+```java
+for (String nome : nomes)
+```
+
+Fica assim: "Para cada `String` chamada `nome` dentro de `nomes`".
+
+O que o sistema está fazendo é pegar cada elemento do array `nomes` e armazená-lo temporariamente na variável `nome`. 
+A cada repetição, essa variável recebe o próximo elemento, que é exibido na tela.
+
+O looping continua até percorrer todos os elementos do array.
+
+Uma vantagem do `for-each` é que você não precisa acessar cada posição utilizando índices, 
+como faria com `nomes[0]`, `nomes[1]` e assim por diante.
+
+---
+
+### do-while
+
+Já o `do-while` funciona de uma forma um pouco diferente. 
+Ele executa o bloco de código pelo menos uma vez e só depois verifica a condição do `while`.
+
+Com isso, você pode fazer coisas interessantes, 
+como um menu de caixa eletrônico ou um menu de jogo que precisa ser exibido pelo menos uma vez antes de o usuário decidir se deseja continuar ou sair.
+
+Veja um exemplo:
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // A classe Scanner serve para ler o que o usuário vai digitar
+        Scanner leitor = new Scanner(System.in);
+
+        String senhaDigitada;
+        String senhaCorreta = "java123";
+
+        // O bloco "do" garante que o código rode pelo menos uma vez
+        do {
+            System.out.print("Digite a senha para entrar no sistema: ");
+            // Lendo o que o usuário está digitando
+            senhaDigitada = leitor.nextLine();
+
+            // Verifica se a senha digitada é diferente da senha correta
+            if (!senhaDigitada.equals(senhaCorreta)) {
+                // Caso seja diferente, exibe uma mensagem de erro
+                System.out.println("Senha incorreta! Tente novamente.\n");
+            }
+
+            // Enquanto a senha estiver errada, o looping se repete
+        } while (!senhaDigitada.equals(senhaCorreta));
+
+        System.out.println("Acesso liberado! Bem-vindo ao sistema.");
+
+        leitor.close();
+    }
+}
+```
+
+Nesse exemplo, o sistema solicita uma senha ao usuário. 
+Caso ele digite a senha incorretamente, o looping continua e solicita a senha novamente.
+
+Quando o usuário digitar a senha correta, a condição do `while` se tornará falsa e o looping terminará, 
+liberando o acesso.
+
+Observe que utilizamos `!senhaDigitada.equals(senhaCorreta)` para verificar se a senha digitada é diferente da senha correta. 
+O símbolo `!` significa negação, ou seja, inverte o resultado de uma condição.
+
+Também utilizamos `Scanner(System.in)` para permitir que o programa leia o que o usuário digita pelo teclado.
+
+A principal diferença entre `while` e `do-while` é que o `while` verifica a condição antes de executar o bloco, 
+enquanto o `do-while` verifica a condição depois de executar o bloco pelo menos uma vez.
+
+---
+
+### Mudanças de tipo

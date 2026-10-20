@@ -13,6 +13,8 @@
 
 [Looping-de-repetição](#looping-de-repetição)
 
+[Casting](#casting)
+
 ---
 
 ### Declarar uma variavel
@@ -520,4 +522,82 @@ enquanto o `do-while` verifica a condição depois de executar o bloco pelo meno
 
 ---
 
-### Mudanças de tipo
+### Casting
+
+Casting nada mais é do que a conversão de um tipo de variável para outro.
+
+Dentro de um ambiente de desenvolvimento, as informações podem chegar de formas diferentes. 
+Às vezes, os dados podem vir de um arquivo `.txt`, de uma API ou do front-end, 
+e pode ser necessário converter esses dados para outro tipo de variável.
+
+É para isso que utilizamos conversões de tipos no Java.
+
+Existem formas simples de converter uma variável para outro tipo, como nos exemplos abaixo:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando variáveis para conversão
+        double idade = 12.5;
+        int idade2 = 17;
+
+        // Casting explícito de double para int
+        int castingIdade = (int) idade;
+
+        // Conversão implícita de int para double
+        double castingIdade2 = idade2;
+    }
+}
+```
+
+Veja que é uma forma simples de converter os tipos das variáveis.
+
+No primeiro exemplo, utilizamos `(int)` para converter um `double` para `int`. 
+Esse tipo de conversão é chamado de *casting explícito*, 
+porque precisamos informar manualmente o tipo para o qual queremos converter.
+
+Nesse caso, o valor `12.5` passa a ser `12`, pois a parte decimal é descartada.
+
+Já no segundo exemplo, convertemos um `int` para `double` sem precisar informar o tipo manualmente. 
+Isso acontece porque essa conversão pode ser realizada automaticamente, sendo chamada de *conversão implícita*.
+
+Agora, quando precisamos converter uma `String` para um tipo numérico, como `int` ou `double`, 
+o processo é um pouco diferente.
+
+Para isso, podemos utilizar métodos de classes como `Integer` e `Double`.
+
+Exemplo:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando variáveis para conversão
+        String idade = "10";
+        int idade2 = 10;
+
+        // Convertendo String para int
+        int castingIdade = Integer.parseInt(idade);
+
+        // Convertendo int para String
+        String castingIdade2 = String.valueOf(idade2);
+    }
+}
+```
+
+Nesse exemplo, utilizamos `Integer.parseInt(idade)` para converter o texto `"10"` para o número inteiro `10`.
+
+Já no segundo caso, utilizamos `String.valueOf(idade2)` para converter o número inteiro `10` para o texto `"10"`.
+
+Perceba que, nesse caso, não estamos utilizando casting propriamente dito, 
+mas sim métodos para converter os valores de um tipo para outro.
+
+É importante entender essa diferença, pois cada tipo de dado pode exigir uma forma diferente de conversão.
+
+**Atenção:** se você tentar converter uma `String` que não representa um número inteiro válido, como `"abc"`, 
+utilizando `Integer.parseInt()`, o Java lançará um erro chamado `NumberFormatException`.
+
+---
+
+
+
+

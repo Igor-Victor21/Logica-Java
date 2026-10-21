@@ -15,6 +15,12 @@
 
 [Casting](#casting)
 
+[Programação-Orientada-a-Obejtos](#programação-orientada-a-objetos-poo)
+
+[Classes](#classes)
+
+[Objetos](#objetos)
+
 ---
 
 ### Declarar uma variavel
@@ -597,6 +603,187 @@ mas sim métodos para converter os valores de um tipo para outro.
 utilizando `Integer.parseInt()`, o Java lançará um erro chamado `NumberFormatException`.
 
 ---
+
+### Programação Orientada a Objetos (POO)
+
+A linguagem de programação Java é muito conhecida por utilizar POO (Programação Orientada a Objetos).
+
+Esse é um dos conceitos mais importantes para aprender dentro do Java, 
+pois a POO permite organizar o código utilizando classes, objetos, atributos e métodos.
+
+Com isso, você consegue reaproveitar códigos, organizar melhor as funcionalidades e facilitar a manutenção do sistema, 
+deixando o desenvolvimento mais organizado e evitando a repetição desnecessária de código.
+
+A POO é muito utilizada em projetos de diferentes tamanhos, 
+pois ajuda a estruturar o sistema de uma forma que fica mais fácil de entender, modificar e expandir no futuro.
+
+---
+
+### Classes
+
+Classes em POO são basicamente como uma planta de uma casa. Com ela, 
+você consegue se organizar melhor, pois tem uma estrutura e um plano para seguir.
+
+Outra analogia seria uma molde de celular. Imagine que existe um molde padronizado para fabricar celulares. 
+Esse molde segue uma estrutura que serve como base para fabricar celulares do mesmo modelo.
+
+Você concorda que, com esse molde, seria possível fabricar vários celulares seguindo a mesma estrutura, 
+sem precisar criar um molde novo toda vez?
+
+É basicamente essa a ideia de uma classe: ela funciona como um modelo, 
+uma estrutura que ajuda a organizar o código e definir um padrão para o sistema.
+
+Com isso, você consegue deixar seu projeto mais organizado, reaproveitar estruturas e facilitar futuras alterações.
+
+Para criar uma nova classe no IntelliJ:
+
+1. Clique com o botão direito na pasta do projeto onde deseja criar a classe.
+2. Selecione `New` e depois `Java Class`.
+3. Escolha a opção `Class` e informe o nome desejado.
+
+O nome da classe deve começar com letra maiúscula por convenção do Java. Por exemplo, `Main` ou `Pessoa`.
+
+Ao criar a classe, o código ficará parecido com este:
+
+```java
+public class Main {
+
+}
+```
+
+Observe que `public class` deve ser escrito dessa forma, com letras minúsculas. Já `Main` começa com letra maiúscula porque é o nome da classe.
+
+---
+
+### Objetos
+
+O conceito de objetos no Java pode ser um pouco abstrato de entender no começo.
+
+Dentro do desenvolvimento, podemos representar coisas como uma pessoa, um carro ou um celular por meio de objetos. 
+Isso permite organizar as informações de cada um e trabalhar com elas dentro do sistema.
+
+Por exemplo, podemos utilizar uma classe `Pessoa` como modelo para representar diferentes pessoas dentro de um sistema.
+
+Imagine que precisamos cadastrar várias pessoas em uma plataforma. Cada pessoa possui suas próprias informações, como:
+
+- Nome
+- Idade
+- CPF
+
+Em vez de criar variáveis separadas para cada pessoa e repetir a mesma estrutura várias vezes, 
+podemos utilizar uma classe como modelo e criar um objeto para cada pessoa cadastrada.
+
+Por exemplo, poderíamos ter uma pessoa chamada Igor, com 20 anos, e outra chamada Felipe, com 25 anos. 
+Os dois seguem a mesma estrutura, mas possuem informações diferentes.
+
+Veja um exemplo simples:
+
+```java
+public class Pessoa {
+    String nome;
+    int idade;
+    String cpf;
+}
+```
+
+Nesse exemplo, criamos a classe `Pessoa` e definimos as informações que cada pessoa poderá ter.
+
+Agora podemos criar objetos a partir dessa classe:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando o primeiro objeto
+        Pessoa pessoa1 = new Pessoa();
+        pessoa1.nome = "Igor";
+        pessoa1.idade = 20;
+        pessoa1.cpf = "111";
+
+        // Criando o segundo objeto
+        Pessoa pessoa2 = new Pessoa();
+        pessoa2.nome = "Felipe";
+        pessoa2.idade = 25;
+        pessoa2.cpf = "222";
+    }
+}
+```
+
+Observe que criamos dois objetos utilizando a mesma classe `Pessoa`, mas cada um possui suas próprias informações.
+
+Isso facilita muito a organização quando precisamos trabalhar com vários cadastros dentro de um sistema.
+
+Por exemplo, se quisermos armazenar várias pessoas em um array, podemos fazer assim:
+
+```java
+Pessoa[] pessoas = new Pessoa[2];
+
+pessoas[0] = pessoa1;
+pessoas[1] = pessoa2;
+```
+
+Nesse caso, o array possui duas posições, e cada posição armazena uma referência para um objeto `Pessoa`.
+
+Dessa forma, no índice `0` temos a primeira pessoa, e no índice `1` temos a segunda. 
+Cada pessoa possui suas próprias informações.
+
+---
+
+### Métodos
+
+Métodos são uma parte importante do Java e servem para definir ações que o código pode executar.
+
+Por exemplo, imagine uma calculadora. Em vez de escrever todo o código de uma soma sempre que precisar realizar essa operação, 
+podemos criar um método chamado `somar()` e utilizá-lo quando necessário.
+
+Isso deixa o código mais organizado, evita a repetição desnecessária e facilita a manutenção. 
+Caso exista algum problema na operação de soma, 
+podemos verificar o método responsável por ela sem precisar procurar a lógica em várias partes do sistema.
+
+Como criar um método:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int num1 = 2;
+        int num2 = 3;
+
+        // Chamando o método soma
+        soma(num1, num2);
+    }
+
+    // Criando um método para realizar a soma
+    public static void soma(int num1, int num2) {
+        int resultado = num1 + num2;
+
+        System.out.println(resultado);
+    }
+}
+```
+
+Nesse exemplo, temos dois métodos: `main()` e `soma()`.
+
+O método `main()` é o ponto de entrada do programa nesse exemplo. 
+Dentro dele, criamos duas variáveis e chamamos o método `soma()`, enviando os valores que queremos somar.
+
+Já o método `soma()` recebe esses dois valores, realiza a operação e exibe o resultado no console.
+
+Vamos entender algumas partes do método:
+
+- `public static void` - são palavras utilizadas na declaração desse método. Por enquanto, 
+o importante é reconhecer essa estrutura; cada uma possui uma função específica.
+- `soma` - é o nome que escolhemos para o método.
+- `int num1, int num2` - são os parâmetros que recebem os dois números enviados na chamada do método.
+- `int resultado = num1 + num2;` - realiza a soma e armazena o resultado.
+- `System.out.println(resultado);` - exibe o resultado no console.
+
+É um exemplo simples de como utilizar métodos no Java. Conforme o sistema cresce, 
+podemos separar diferentes ações em métodos específicos, 
+deixando o código mais organizado e facilitando a identificação e a correção de problemas.
+
+---
+
+
+
 
 
 

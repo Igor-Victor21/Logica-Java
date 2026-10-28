@@ -21,6 +21,10 @@
 
 [Objetos](#objetos)
 
+[Métodos](#métodos)
+
+[Métodos-Construtores](#métodos-construtores)
+
 ---
 
 ### Declarar uma variavel
@@ -779,6 +783,104 @@ o importante é reconhecer essa estrutura; cada uma possui uma função específ
 É um exemplo simples de como utilizar métodos no Java. Conforme o sistema cresce, 
 podemos separar diferentes ações em métodos específicos, 
 deixando o código mais organizado e facilitando a identificação e a correção de problemas.
+
+---
+
+### Métodos construtores
+
+Um método construtor é um recurso do Java que é chamado quando um objeto é criado. 
+Ele serve principalmente para inicializar esse objeto, definindo os valores iniciais que ele terá.
+
+Por exemplo, imagine que você está criando um sistema de cadastro de clientes. 
+Você pode utilizar um construtor para definir o nome e a idade do cliente no momento em que o objeto é criado.
+
+Dessa forma, você consegue criar diferentes clientes, cada um com suas próprias informações, 
+sem precisar definir esses valores manualmente dentro da classe toda vez.
+
+Para entender melhor, veja o exemplo:
+
+```java
+public class Client {
+    String nome;
+    int idade;
+
+    // Método construtor
+    public Client(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+```
+
+Nesse exemplo, criamos um construtor chamado `Client`, que recebe o nome e a idade do cliente.
+
+Observe que o construtor possui o mesmo nome da classe e não possui um tipo de retorno, nem mesmo `void`. 
+Essas são características importantes para identificar um construtor em Java.
+
+Também utilizamos `this` para indicar que estamos nos referindo aos atributos do objeto atual.
+
+Agora, na classe `Main`, podemos criar um cliente informando os dados que queremos utilizar:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando um cliente com suas informações
+        Client client = new Client("Igor Victor da Silva", 23);
+    }
+}
+```
+
+Quando executamos `new Client("Igor Victor da Silva", 23)`, 
+o construtor é chamado e recebe as informações que serão utilizadas para inicializar o cliente.
+
+---
+
+### Métodos comuns
+
+Mas e se quisermos exibir as informações do cliente? Para isso, utilizamos um método comum, e não um construtor.
+
+Veja como ficaria:
+
+```java
+public class Client {
+    String nome;
+    int idade;
+
+    // Método construtor
+    public Client(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Método para exibir as informações do cliente
+    public void exibirInformacoesCliente() {
+        System.out.println("Seu nome é: " + this.nome);
+        System.out.println("Sua idade é: " + this.idade);
+    }
+}
+```
+
+Agora, basta criar o cliente e chamar o método para exibir suas informações:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Criando o cliente
+        Client client = new Client("Igor Victor da Silva", 23);
+
+        // Exibindo as informações do cliente
+        client.exibirInformacoesCliente();
+    }
+}
+```
+
+Perceba que cada parte possui uma função específica: o construtor inicializa o cliente, 
+enquanto o método `exibirInformacoesCliente()` mostra suas informações.
+
+Essa separação ajuda a deixar o código mais organizado e facilita a manutenção do sistema.
+
+Resumindo, o construtor serve para inicializar um objeto no momento em que ele é criado. 
+Já os métodos comuns servem para definir ações que podem ser executadas quando necessário, como exibir informações, atualizar dados ou realizar outras tarefas dentro do sistema.
 
 ---
 

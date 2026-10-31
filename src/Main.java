@@ -25,7 +25,10 @@ public class Main {
         // Fazendo um switch case para as opções iniciais do caixa eletrônico
             switch (inputNum) {
                 case 1:
-                    singUp.singUpUsers();
+
+                    // Chamando o metodo de criar usuários
+                    SingUpUsers.singUpUsers();
+
                     break;
 
                 case 2:

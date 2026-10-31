@@ -3,9 +3,16 @@ import java.util.Scanner;
 public class SingUpUsers {
     public static void singUpUsers(){
 
+        // Declarando variáveis
+        String nome;
+        int idade;
+        String dataNascimento;
+        String cpf;
+        String senha;
+        double dinheiro = 0;
+
         // Instanciando classes
         Scanner read = new Scanner(System.in);
-        DataBase db = new DataBase();
 
         // Declarando variável de opção numérica
         int inputNum = 0;
@@ -28,31 +35,37 @@ public class SingUpUsers {
 
             System.out.println("Informe seu nome completo");
             System.out.print("$ ");
-            db.nome = read.nextLine();
+            nome = read.nextLine();
 
             System.out.println("Informe sua idade");
             System.out.print("$ ");
-            db.idade = read.nextInt();
+            idade = read.nextInt();
 
             // Limpando o buffer do Scanner
             read.nextLine();
 
             System.out.println("Informe sua data de nascimento");
             System.out.print("$ ");
-            db.dataNascimento = read.nextLine();
+            dataNascimento = read.nextLine();
 
             System.out.println("Informe seu CPF");
             System.out.print("$ ");
-            db.cpf = read.nextLine();
+            cpf = read.nextLine();
 
             System.out.println("Informe sua senha");
             System.out.print("$ ");
-            db.senha = read.nextLine();
+            senha = read.nextLine();
 
-            db.dinheiro = 0;
+            dinheiro = 0;
 
-            //Cadastro realizado com sucesso
-            db.exibirInfo();
+            // Instanciando a classe banco de dados e enviando como parâmetro todas as variáveis para o metodo construtor
+            DataBase db = new DataBase(nome,idade,dataNascimento,cpf,senha,dinheiro);
+
+            // Adicionando os usuários no sistemas
+            DataBase.createUsers(db);
+
+            //Verificando se está sendo registrado os usuários
+            DataBase.readUsers();
 
         } else if (inputNum == 2) {
 

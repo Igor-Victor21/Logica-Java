@@ -25,6 +25,8 @@
 
 [Métodos-Construtores](#métodos-construtores)
 
+[Modificadores-de-acesso](#modificadores-de-acesso)
+
 ---
 
 ### Declarar uma variavel
@@ -883,6 +885,10 @@ Resumindo, o construtor serve para inicializar um objeto no momento em que ele �
 Já os métodos comuns servem para definir ações que podem ser executadas quando necessário, como exibir informações, atualizar dados ou realizar outras tarefas dentro do sistema.
 
 ---
+
+### Modificadores de acesso
+
+
 
 
 

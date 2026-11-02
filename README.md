@@ -888,6 +888,74 @@ Já os métodos comuns servem para definir ações que podem ser executadas quan
 
 ### Modificadores de acesso
 
+Os modificadores de acesso são uma forma de controlar a visibilidade das nossas classes, 
+atributos e métodos dentro do Java.
+
+Com eles, conseguimos definir quais partes do nosso código podem ser acessadas de outros lugares e quais devem ficar restritas.
+
+Isso ajuda a organizar melhor o sistema e controlar o acesso às informações, 
+evitando que qualquer parte do código consiga modificar ou acessar algo que deveria estar protegido.
+
+Os principais modificadores de acesso do Java são:
+
+- `public`: permite acessar de qualquer lugar, desde que exista visibilidade da classe ou membro.
+- `private`: permite acessar somente dentro da própria classe.
+- `protected`: permite acessar dentro do mesmo pacote e também por subclasses, mesmo que estejam em outros pacotes.
+- *default* (sem modificador): permite acessar somente dentro do mesmo pacote.
+
+---
+
+### Package
+
+Os `packages` são utilizados para organizar classes e interfaces em grupos diferentes dentro do Java.
+
+Eles ajudam a manter o projeto organizado, facilitam a localização dos arquivos e evitam conflitos entre classes que possuem o mesmo nome.
+
+Além disso, os modificadores de acesso estão relacionados aos packages, pois alguns deles controlam o acesso às classes, 
+atributos e métodos de acordo com o pacote em que estão.
+
+E como declarar um `package`?
+
+Basicamente, no topo da sua classe, antes da declaração da classe, você irá colocar o seguinte:
+
+```java
+package nome_do_package;
+```
+
+Porém, precisa ficar atento a uma coisa: o package precisa corresponder à estrutura de pastas do projeto.
+
+Por exemplo, se você criar o package `logica_em_java`, 
+normalmente terá uma pasta com esse nome dentro do diretório de código-fonte, como `src` ou `src/main/java`, dependendo da estrutura do projeto.
+
+Sua classe ficará dentro dessa pasta e deverá começar com a declaração do package:
+
+```java
+package logica_em_java;
+
+public class Main {
+
+}
+```
+
+Isso é muito utilizado em projetos maiores, principalmente na criação de APIs e sistemas que possuem várias funcionalidades.
+
+Por exemplo, ao desenvolver uma API, você pode organizar suas classes em diferentes packages, como:
+
+- `config`: configurações da aplicação.
+- `controllers`: responsáveis por receber e organizar as requisições.
+- `middlewares`: responsáveis por executar verificações durante o processamento das requisições.
+- `utils`: funções e recursos auxiliares.
+
+Cada package possui uma responsabilidade diferente, deixando o projeto mais organizado e facilitando a manutenção.
+
+Também é possível utilizar classes de outros packages, desde que elas estejam acessíveis. Para isso, 
+podemos utilizar o `import` quando necessário.
+
+Dessa forma, os packages ajudam a organizar o projeto, enquanto os modificadores de acesso permitem controlar quais partes do código podem ser acessadas.
+
+---
+
+### 
 
 
 

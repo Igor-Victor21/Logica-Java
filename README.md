@@ -27,6 +27,8 @@
 
 [Modificadores-de-acesso](#modificadores-de-acesso)
 
+[Encapsulamento](#encapsulamento)
+
 ---
 
 ### Declarar uma variavel
@@ -955,7 +957,108 @@ Dessa forma, os packages ajudam a organizar o projeto, enquanto os modificadores
 
 ---
 
-### 
+### Encapsulamento
+
+O encapsulamento é um dos pilares da programação orientada a objetos em Java e é muito utilizado em conjunto com os modificadores de acesso.
+
+Geralmente, ele é utilizado para proteger as variáveis de uma classe, 
+impedindo que sejam acessadas ou modificadas diretamente de fora dela.
+
+Com isso, podemos deixar variáveis, arrays, ArrayLists e até métodos privados, 
+controlando o que pode ser acessado e modificado por outras classes.
+
+Para encapsular uma variável é bem simples:
+
+```java
+private String nome;
+```
+
+Com isso, a variável `nome` se torna privada e só pode ser acessada diretamente dentro da própria classe.
+
+Para permitir que outras classes consultem ou modifiquem essa variável, podemos criar métodos públicos. 
+Dessa forma, conseguimos controlar o que entra e sai dos nossos atributos.
+
+**Exemplo:**
+
+```java
+public class Carro {
+    private String nomeCarro;
+
+    // Método construtor para iniciar a variável
+    public Carro(String nomeCarro) {
+        this.nomeCarro = nomeCarro;
+    }
+
+    // Método para exibir o nome do carro
+    public void exibirCarro() {
+        System.out.println(this.nomeCarro);
+    }
+}
+```
+
+Nesse exemplo, criamos uma variável privada chamada `nomeCarro`. Depois, 
+utilizamos o construtor para receber um nome e armazená-lo na variável com `this.nomeCarro`.
+
+Por último, criamos um método público chamado `exibirCarro()`, 
+que permite exibir o nome do carro sem precisar acessar a variável diretamente.
+
+Lembrando que esse nome pode vir da classe `Main` ou de alguma outra classe, 
+passando o valor como parâmetro na hora de instanciar um carro.
+
+**Exemplo na classe Main:**
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Carro carro = new Carro("BMW");
+
+        carro.exibirCarro();
+    }
+}
+```
+
+### Encapsulamento de métodos
+
+Assim como podemos proteger variáveis, também podemos encapsular métodos utilizando os modificadores de acesso.
+
+Isso significa que podemos deixar determinados métodos privados, impedindo que outras classes os chamem diretamente.
+
+Mas por que fazer isso?
+
+Imagine que temos um método responsável por calcular o valor de um desconto. 
+Não queremos necessariamente que outras classes executem esse cálculo diretamente. 
+Podemos deixar esse método privado e permitir que ele seja utilizado somente dentro da própria classe.
+
+**Exemplo:**
+
+```java
+public class Produto {
+    private double preco = 100;
+
+    // Método privado para calcular o desconto
+    private double calcularDesconto() {
+        return preco * 0.10;
+    }
+
+    // Método público para exibir o preço com desconto
+    public void exibirPrecoComDesconto() {
+        double desconto = calcularDesconto();
+
+        System.out.println(preco - desconto);
+    }
+}
+```
+
+Nesse exemplo, criamos o método `calcularDesconto()` como privado (`private`). Com isso, 
+ele só pode ser chamado diretamente dentro da própria classe `Produto`.
+
+Já o método `exibirPrecoComDesconto()` é público (`public`), 
+permitindo que outras classes utilizem essa funcionalidade sem precisar acessar diretamente o cálculo do desconto.
+
+**Resumindo:** o encapsulamento permite proteger tanto os atributos quanto os métodos de uma classe, 
+controlando o acesso e evitando que outras classes utilizem ou modifiquem partes internas do sistema sem a devida permissão.
+
+---
 
 
 
